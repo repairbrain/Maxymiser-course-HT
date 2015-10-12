@@ -22,7 +22,7 @@
 пользователь: 34
 программа: угадал, хитрец, за 6 попыток.*/
 
-var computerChoice = parseInt((Math.random() * 50), 10);
+var computerChoice = Math.floor(Math.random() * 51);
 var currentChoice = parseInt(prompt('Я загадала число от 0 до 50. Угадывай, пользователь') ,10);
 var previousChoice = 0;
 var maxIteration = 10;
