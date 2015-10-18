@@ -24,7 +24,7 @@
 
 var computerChoice = Math.floor(Math.random() * 51);
 var currentChoice = parseInt(prompt('Я загадала число от 0 до 50. Угадывай, пользователь') ,10);
-var previousChoice = 0;
+var previousChoice = Infinity;
 var maxIteration = 10;
 
 for (var currentIteration = 1; currentIteration <= maxIteration + 1; currentIteration += 1) {
@@ -33,10 +33,10 @@ for (var currentIteration = 1; currentIteration <= maxIteration + 1; currentIter
 	} else if (currentChoice === computerChoice) {
 		alert('Угадал, хитрец, за ' + currentIteration + ' попыток.');
 		break;
-	} else if (Math.abs(computerChoice - currentChoice) < Math.abs(computerChoice - previousChoice)) {
+	} else if (Math.abs(computerChoice - currentChoice) <= Math.abs(computerChoice - previousChoice)) {
 		previousChoice = currentChoice;
 		currentChoice = parseInt(prompt('Теплее, твой ход!') ,10);
-	} else if (Math.abs(computerChoice - currentChoice) > Math.abs(computerChoice - previousChoice)) {
+	} else {
 		previousChoice = currentChoice;
 		currentChoice = parseInt(prompt('Холоднее, твой ход!') ,10);
 	}
