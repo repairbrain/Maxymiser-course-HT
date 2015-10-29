@@ -25,3 +25,10 @@ function execFunctions(arrOfFunctions) {
 	});	
 	return resultArray;
 }
+
+
+function execFunctions(arrOfFunctions) {
+	return arrOfFunctions.map(function(el) {
+		return el();
+	});
+}

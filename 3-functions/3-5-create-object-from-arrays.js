@@ -24,3 +24,15 @@ function createObject(arrOfKeys, arrOfData) {
 	});
 	return resultArray;	
 }
+
+
+function createObject(arrOfKeys, arrOfData) {
+	return arrOfKeys.reduce(function(resultArray, currentValue, index) {
+		resultArray[currentValue] = arrOfData[index];
+		return resultArray;
+	}, {});
+}
+
+
+
+

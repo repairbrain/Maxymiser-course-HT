@@ -15,3 +15,15 @@ function sumOnly100Plus(arr) {
 	});
 	return result;
 }
+
+
+
+function sumOnly100Plus(arr) {
+	return arr.reduce(function(prevValue, currentValue, index) {
+		if (typeof(currentValue) === "number" && currentValue > 100) {
+			return prevValue + currentValue;
+		} else {
+			return prevValue + 0;
+		}
+	}, 0);
+}
