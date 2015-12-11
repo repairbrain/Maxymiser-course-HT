@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ContextMenu Widget</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<script>
+		var menuExample = [{
+			title: 'File',
+			action: function() {
+				console.log('open file');
+			}
+		}, {
+			title: 'Edit',
+			action: function() {
+				console.log('edit content');
+			}
+		}, {
+			title: 'More stuff',
+			submenu: [{
+				title: 'Send by email',
+				action: function() {
+					console.log('emailed');
+				}
+			}, {
+				title: 'Send via skype',
+				submenu: [{
+					title: 'skype1',
+					action: function() {
+						console.log('emailed');
+					}
+				}, {
+					title: 'skype2',
+					action: function() {
+						console.log('skyped');
+					}
+				}]
+			}]
+		}];
+
+		var contextMenu = new ContextMenu('body', menuExample);
+		contextMenu.init();
+	</script>
+</body>
+</html>
