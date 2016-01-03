@@ -14,19 +14,18 @@
 		this.lapsTime = [];
 		this.updateTimeInterval = null;
 		Timer.prototype.activeTimer = this;
-		Timer.prototype.keyboardRepeat = 0;
+		this.bindEvents();
+	}
 
+	Timer.prototype.bindEvents = function() {
 		this.startButtonEl.addEventListener('click', this.toggleTimer.bind(this), false);
 		this.lapButtonEl.addEventListener('click', this.addLap.bind(this), false);
 		this.resetButtonEl.addEventListener('click', this.reset.bind(this), false);
-		this.container.addEventListener('mouseenter', this.setActiveTimer.bind(this), false);
+		this.container.addEventListener('mouseenter', function() {
+			Timer.prototype.activeTimer = this;
+		}.bind(this), false);
 		document.documentElement.addEventListener('keydown', this.keyboardListener.bind(this), false);
-
-		if (!Timer.prototype.instance) {
-			Timer.prototype.instance = [];
-		}
-		Timer.prototype.instance.push(this);
-	}
+	};
 
 	Timer.prototype.initialLayout = function(node) {
 		var container = document.createElement('div');
@@ -65,33 +64,21 @@
 		node.appendChild(container);
 	};
 
-	Timer.prototype.setActiveTimer = function(event) {
-		Timer.prototype.instance.forEach(function(instance) {
-			if (instance.container.parentNode === event.target.parentNode) {
-				Timer.prototype.activeTimer = instance;
-			}
-		});
-	};
-
 	Timer.prototype.keyboardListener = function(event) {
-		setTimeout(function() {
-			Timer.prototype.keyboardRepeat = 0;
-		}, 50);
+		var KEY_S = 83;
+		var KEY_L = 76;
+		var KEY_R = 82;
+		var activeTimer = Timer.prototype.activeTimer;
 
-		if (Timer.prototype.keyboardRepeat > 0) {
-			return;
+		if (activeTimer === this) {
+			if (event.keyCode === KEY_S) {
+				activeTimer.toggleTimer();
+			} else if (event.keyCode === KEY_L) {
+				activeTimer.addLap();
+			} else if (event.keyCode === KEY_R) {
+				activeTimer.reset();
+			}
 		}
-
-		var _this = Timer.prototype.activeTimer;
-
-		if (event.keyCode === 83) {
-			_this.toggleTimer();
-		} else if (event.keyCode === 76) {
-			_this.addLap();
-		} else if (event.keyCode === 82) {
-			_this.reset();
-		}
-		Timer.prototype.keyboardRepeat++;
 	};
 
 	Timer.prototype.toggleTimer = function() {
