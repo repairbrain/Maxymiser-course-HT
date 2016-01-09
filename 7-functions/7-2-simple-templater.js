@@ -21,3 +21,11 @@ function templater(templateString, dataObj) {
 		return string + elem;
 	}, '');
 }
+
+
+/*Вариант с регулярками*/
+function templater(templateString, dataObj) {
+	return templateString.replace(/\$\{(.+?)\}/g, function(str, p1) {
+		return dataObj[p1];
+	});
+}
