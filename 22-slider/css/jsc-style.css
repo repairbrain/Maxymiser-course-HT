@@ -1,0 +1,60 @@
+/*jsc-slider-styles*/
+.jsc-slider-container {
+	border: 2px solid #eaeaea;
+	width: 1180px;
+    height: 345px;
+    display: inline-block;
+}
+
+.jsc-controls-wrap {
+	float: left;
+	width: 270px;
+	height: 100%;
+}
+
+.jsc-control-element {
+	display: block;
+    height: 25%;
+    text-decoration: none;
+    border-bottom: 2px solid #eaeaea;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.jsc-control-element:last-child {
+	border-bottom: 0;
+}
+
+.jsc-control-element.active {
+	background: rgb(255, 106, 11);
+}
+
+.jsc-control-element.active:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 106, 11);
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    margin-top: -10px;
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.jsc-slides-wrap {
+	float: right;
+	width: 910px;
+	height: 100%;
+	overflow: hidden;
+}
+
+.jsc-slides-container {
+	width: 3640px;
+	height: 100%;
+	position: relative;
+}
+
+.jsc-slide-img {
+	float: left;
+}
