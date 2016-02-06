@@ -7,3 +7,5 @@
 использовать возможности jQuery по максимум
 слайдер должен работать в ie9+
 никаких готовых плагинов, только самописный код
+
+[Демо](http://repairbrain.github.io/Maxymiser-course-HT/22-slider/slider.html "Демо")

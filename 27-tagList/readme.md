@@ -10,3 +10,6 @@
 Делать на jQuery
 Опционально - добавить кнопку удаления всех тегов
 Опционально - делать на верстке Bootstrap'a
+
+
+[Демо](http://repairbrain.github.io/Maxymiser-course-HT/27-tagList/index.html "Демо")
