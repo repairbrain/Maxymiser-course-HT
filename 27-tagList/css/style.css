@@ -1,0 +1,47 @@
+.taglist {
+	margin-top: 10px;
+}
+
+.xhr {
+	border-bottom: 1px dashed #337ab7;
+	text-decoration: none !important;
+}
+
+.xhr:hover {
+	border-bottom-color: #23527c;
+}
+
+.close.close-tag {
+	padding-top: 2px;
+}
+
+.link-wrap, .tags-wrap {
+	margin-bottom: 20px;
+}
+
+.delete-all-link {
+	margin-left: 50px;
+}
+
+.tag {
+	float: left;
+    margin-right: 10px;
+    padding-right: 4px;
+}
+
+.tag-caption {
+	padding-right: 3px;
+    padding-left: 5px;
+    vertical-align: middle;
+    line-height: 24px;
+}
+
+.tag-input {
+	width: 50%;
+	float: left;
+	margin-right: 10px;
+}
+
+.add-tag {
+	float: left;
+}
